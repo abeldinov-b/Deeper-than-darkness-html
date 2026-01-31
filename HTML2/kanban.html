@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <title>Kanban Board</title>
+    <link rel="stylesheet" href="css/kanban.css">
+</head>
+<body>
+
+<header class="container">
+    <span class="logo">logo</span>
+
+    <nav>
+        <ul>
+            <li class="active"><a href="index.html">Home</a></li>
+            <li><a href="#">About us</a></li>
+            <li><a href="#">Portfolio</a></li>
+            <li><a href="kanban.html">KANBAN</a></li>
+            <li class="btn"><a href="#">Contacts</a></li>
+        </ul>
+    </nav>
+</header>
+
+<h1>Kanban Board</h1>
+
+<div class="board">
+
+    <div class="column">
+        <h2>To Do</h2>
+        <div class="cards" id="todo"></div>
+        <button class="add-btn" onclick="openModal('todo')">Add</button>
+    </div>
+
+    <div class="column">
+        <h2>In Process</h2>
+        <div class="cards" id="process"></div>
+        <button class="add-btn" onclick="openModal('process')">Add</button>
+    </div>
+
+    <div class="column">
+        <h2>Done</h2>
+        <div class="cards" id="done"></div>
+        <button class="add-btn" onclick="openModal('done')">Add</button>
+    </div>
+
+</div>
+
+<!-- MODAL -->
+<div class="modal" id="modal">
+    <div class="modal-content">
+        <h3>Add / Edit task</h3>
+
+        <input type="text" id="modal-title" placeholder="Title">
+        <textarea id="modal-desc" placeholder="Description"></textarea>
+
+        <div class="modal-buttons">
+            <button id="modal-action" onclick="saveCard()">Create</button>
+            <button class="cancel" onclick="closeModal()">Cancel</button>
+        </div>
+    </div>
+</div>
+
+<script src="JavaScript/kanban.js"></script>
+</body>
+</html>
